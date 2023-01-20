@@ -1,0 +1,15 @@
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ['https://www.googleapis.com/auth/spreadsheets', "https://www.googleapis.com/auth/drive.file",
+                                                         "https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name("token.json", scope)
+client = gspread.authorize(creds)
+visatestbot = client.open("visatestbot").worksheet("Test")
+
+# создали json file из service account, добавили "client_email" из json файла в редакторы таблицы, и указали json файл как данные для входа
+
+
+
+
+
